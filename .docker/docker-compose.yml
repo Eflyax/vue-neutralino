@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  installers:
+    container_name: "installers"
+    image: "node:18.13.0-alpine"
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    working_dir: '/var/www/html'
+    volumes:
+      - ../:/var/www/html
+    stdin_open: true

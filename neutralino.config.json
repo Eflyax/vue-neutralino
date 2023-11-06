@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/neutralinojs/neutralinojs/main/schemas/neutralino.config.schema.json",
+	"applicationId": "js.neutralino.sample",
+	"version": "1.0.0",
+	"defaultMode": "window",
+	"port": 0,
+	"documentRoot": "/vue/dist/",
+	"url": "/",
+	"enableServer": true,
+	"enableNativeAPI": true,
+	"tokenSecurity": "one-time",
+	"logging": {
+		"enabled": true,
+		"writeToLogFile": true
+	},
+	"nativeAllowList": [
+		"app.*",
+		"os.*",
+		"debug.log",
+		"filesystem.readDirectory"
+	],
+	"modes": {
+		"window": {
+			"x": 200,
+			"y": 200,
+			"title": "Vue-neutralino",
+			"width": 800,
+			"height": 500,
+			"minWidth": 400,
+			"minHeight": 200,
+			"fullScreen": false,
+			"alwaysOnTop": false,
+			"icon": "/src/icons/appIcon.png",
+			"enableInspector": true,
+			"borderless": false,
+			"maximize": false,
+			"hidden": false,
+			"resizable": true,
+			"exitProcessOnClose": true
+		},
+		"browser": {
+			"globalVariables": {
+				"TEST": "Test value browser"
+			},
+			"nativeBlockList": [
+				"filesystem.*"
+			]
+		},
+		"cloud": {
+			"url": "/src/#cloud",
+			"nativeAllowList": [
+				"app.*"
+			]
+		},
+		"chrome": {
+			"width": 800,
+			"height": 500,
+			"args": "--user-agent=\"Neutralinojs chrome mode\"",
+			"nativeBlockList": [
+				"filesystem.*",
+				"os.*"
+			]
+		}
+	},
+	"cli": {
+		"binaryName": "myApp",
+		"resourcesPath": "/vue/dist/",
+		"extensionsPath": "/extensions/",
+		"binaryVersion": "4.14.1",
+		"clientLibrary": "/vue/public/neutralino.js",
+		"clientVersion": "3.12.0",
+		"frontendLibrary": {
+			"patchFile": "/vue/index.html",
+			"devUrl": "http://localhost:3000/"
+		}
+	}
+}

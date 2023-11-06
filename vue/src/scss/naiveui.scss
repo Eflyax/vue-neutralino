@@ -1,0 +1,105 @@
+.n-spin-content {
+	width: 100%;
+}
+
+.n-spin-description {
+	background-color: white;
+	border-radius: 20px;
+	padding: 5px 10px;
+}
+
+.n-spin-container {
+	width: 100%;
+}
+
+.n-config-provider {
+	display: flex;
+	height: 0;
+
+	&.standalone {
+		margin-top: 50px;
+	}
+}
+
+.n-tabs-wrapper {
+	height: 40px;
+}
+
+.n-tabs-tab-pad,
+.n-tabs-pad,
+.n-tabs {
+	.n-tabs-nav {
+		.n-tabs-nav--card-type {
+			.n-tabs-tab {
+				background-color: $gray-primary;
+				color: $gray-tertiary;
+				font-size: 14px;
+				font-weight: 700;
+				line-height: 20px;
+
+				.mdi {
+					padding-right: 10px;
+				}
+
+				&.n-tabs-tab--active {
+					background-color: $white-primary;
+					font-size: 14px;
+					font-weight: 700;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+}
+
+
+.n-tabs-pane-wrapper {
+	padding: 0px 20px 0 20px;
+}
+
+.n-popover {
+	max-width: 400px;
+}
+
+.n-drawer {
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	padding: 20px;
+
+	.n-drawer-content {
+		.n-drawer-body-content-wrapper {
+			padding-top: 30px;
+		}
+
+		.n-drawer-header {
+			border: none;
+			font-size: 22px;
+		}
+
+		.n-drawer-header__close {
+			background-color: $gray-primary;
+			border-radius: 100%;
+			padding: 12px;
+		}
+	}
+
+	.drawer-header {
+		color: $black;
+		font-size: 20px;
+		font-weight: 700;
+	}
+}
+
+.n-data-table .n-data-table-wrapper {
+	tbody {
+		font-family: 'Open Sans';
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 20px;
+
+		.n-button {
+			background-color: transparent;
+		}
+	}
+}
