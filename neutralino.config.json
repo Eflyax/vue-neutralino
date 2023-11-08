@@ -3,7 +3,7 @@
 	"applicationId": "js.neutralino.sample",
 	"version": "1.0.0",
 	"defaultMode": "window",
-	"port": 0,
+	"port": 3538,
 	"documentRoot": "/vue/dist/",
 	"url": "/",
 	"enableServer": true,

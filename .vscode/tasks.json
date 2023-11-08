@@ -1,0 +1,80 @@
+{
+	"version": "2.0.0",
+	"tasks": [{
+		"label": "$(play)Start",
+		"type": "shell",
+		"command": "docker start vue-neutralino && docker exec -ti vue-neutralino yarn dev",
+		"options": {
+			"statusbar": {
+				"color": "#45f300",
+				"detail": "Start docker container and run project"
+			}
+		}
+	}, {
+		"label": "$(ports-open-browser-icon)Open",
+		"type": "shell",
+		"command": "PORT=$(awk -F '=' '/APP_PORT/ {print $2}' .env); sensible-browser http://localhost:$PORT",
+		"options": {
+			"statusbar": {
+				"color": "#7eb6ff",
+				"detail": "(Experimental function) Open running project in browser."
+			}
+		}
+	}, {
+		"label": "$(stop)Stop",
+		"type": "shell",
+		"command": "docker kill vue-neutralino",
+		"options": {
+			"statusbar": {
+				"color": "#e94403",
+				"detail": "Kill docker container"
+			}
+		}
+	}, {
+		"label": "$(repo) (Re)install packages",
+		"type": "shell",
+		"command": "docker start vue-neutralino && docker exec -ti vue-neutralino yarn install --force",
+		"options": {
+			"statusbar": {
+				"color": "#ffb3b3",
+				"detail": "Reinstall \"yarn\" packages. This can solve problem with missing libraries."
+			}
+		}
+	}, {
+		"label": "$(repo-sync) (Re)install project",
+		"type": "shell",
+		"command": "docker kill vue-neutralino || true && docker rm vue-neutralino || true && cd vue && rm .env || true && cp .env.sample .env && docker kill vue-neutralino || true && cd .. && docker-compose -f .docker/docker-compose.yml --env-file=\"vue/.env\" up -d && docker exec -ti vue-neutralino yarn install --force",
+		"options": {
+			"statusbar": {
+				"color": "#ff8800",
+				"detail": " Install/reinstall whole project. This can solve any problem $(smiley)",
+			}
+		}
+	}, {
+		"label": "$(terminal) Shell",
+		"type": "shell",
+		"command": "docker start vue-neutralino && docker exec -ti vue-neutralino sh",
+		"options": {
+			"statusbar": {
+				"color": "#ffffff",
+				"detail": "Access to docker container shell"
+			}
+		}
+	}, {
+			"label": "$(git-commit) Go to commit",
+			"type": "shell",
+			"command": "git reset --hard ${input:commitHash}",
+			"options": {
+				"statusbar": {
+					"color": "#b20bff",
+					"detail": "Update tasks by Gitlab snippet"
+				}
+			}
+	}],
+	"inputs": [{
+			"id": "commitHash",
+			"description": "Commit hash:",
+			"default": "",
+			"type": "promptString"
+	}]
+}
