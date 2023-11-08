@@ -24,11 +24,11 @@ export default defineConfig(configOpts => {
 		...buildTargetConfigFn(configOpts, env),
 		server: {
 			host: true,
-			port: env.APP_PORT || 4173
+			port: env.APP_PORT
 		},
 		preview: {
 			host: true,
-			port: env.APP_PORT || 4173
+			port: env.APP_PORT
 		}
 	};
 });
@@ -44,7 +44,7 @@ const buildTargets: Record<string, (config: ConfigEnv, env: Record<string, strin
 				vue()
 			],
 			define: {
-				'process.env.NODE_ENV': `"${env.NODE_ENV || 'production'}"`,
+				'process.env.NODE_ENV': `"${env.NODE_ENV || 'production'}"`
 			}
 		};
 	}
