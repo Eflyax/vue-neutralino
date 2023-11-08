@@ -23,3 +23,5 @@ neu: INFO App will be launched when http://localhost:XXXX/ is ready...
 Neutralino binary is not configurable with `neutralino.config.json` > `frontendLibrary.devUrl`
 
 2. Neutralino - `dist-mode` cannot make production build if configuration file contains configration `frontendLibrary`. For this reason is dev/dist copied before use.
+
+3. Neutralino - `dist-mode` requires folder `./undefined` in root directory
