@@ -61,6 +61,26 @@
 			}
 		}
 	}, {
+		"label": "$(terminal) Neu-dev",
+		"type": "shell",
+		"command": "cp neutralino.dev.config.json neutralino.config.json && npx neu run",
+		"options": {
+			"statusbar": {
+				"color": "#ffffff",
+				"detail": "Run neutralino in development mode with HMR"
+			}
+		}
+	}, {
+		"label": "$(terminal) Neu-dist",
+		"type": "shell",
+		"command": "cp neutralino.dist.config.json neutralino.config.json && npx neu build",
+		"options": {
+			"statusbar": {
+				"color": "#ffffff",
+				"detail": "Create new neutralino production build"
+			}
+		}
+	}, {
 			"label": "$(git-commit) Go to commit",
 			"type": "shell",
 			"command": "git reset --hard ${input:commitHash}",

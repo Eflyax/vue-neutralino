@@ -1,15 +1,25 @@
-# neutralinojs-minimal
+# Vue-neutralino
 
-The default template for a Neutralinojs app. It's possible to use your favorite frontend framework by using [these steps](https://neutralino.js.org/docs/getting-started/using-frontend-libraries).
+Simple demo with Vue3 + TypeScript + Vite and working HMR
 
-## Contributors
+## Setup development environment
 
-[![Contributors](https://contrib.rocks/image?repo=neutralinojs/neutralinojs-minimal)](https://github.com/neutralinojs/neutralinojs-minimal/graphs/contributors)
+1. Install `neutralino-cli` with `npm i -g @neutralinojs/neu`
+1. Run VSCode task `(Re)install project`
+1. Run VSCode task `Start` to start Vue app
+1. Run VSCode task `Neu-dev` to start Neutralino app
 
-## License
+## Production build
 
-[MIT](LICENSE)
+1. Run VSCode task "Shell"
+1. Create Vue app build:  ```yarn build```
+1. Create Neutralino build with VSCode task `neu-dist`
 
-## Icon credits
+### Known issues 🐛
+1. Vue app must run on port `3000`. Neutralino binary cannot handle another port for some reason with message:
+```
+neu: INFO App will be launched when http://localhost:XXXX/ is ready...
+```
+Neutralino binary is not configurable with `neutralino.config.json` > `frontendLibrary.devUrl`
 
-- `trayIcon.png` - Made by [Freepik](https://www.freepik.com) and downloaded from [Flaticon](https://www.flaticon.com)
+2. Neutralino - `dist-mode` cannot make production build if configuration file contains configration `frontendLibrary`. For this reason is dev/dist copied before use.
