@@ -9,6 +9,7 @@ const
 	app = createApp(App);
 
 app.config.globalProperties.emitter = emitter;
+
 app.config.globalProperties.standalone = false;
 
 app.use(router)
